@@ -1,0 +1,140 @@
+@media (max-width: 767px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header {
+        padding-top: 32px;
+        border-bottom: none;
+
+        &__input {
+            display: none;
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__img {
+            width: 99px;
+        }
+
+        &__nav-mob {
+            display: block;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+    }
+
+    .top__content {
+
+        &-title {
+            width: 100%;
+            margin-top: 82px;
+            font-size: 48px;
+            line-height: 59px;
+            text-align: center;
+            display: inline-block;
+        }
+    }
+
+    .filter {
+        flex-direction: column;
+        row-gap: 14px;
+        margin-top: 32px;
+
+        &__left-text{
+            font-size: 14px;
+        }
+
+        &__button-box {
+            flex-direction: column;
+            row-gap: 10px;
+
+            &-item-one{
+                width: 203px;
+            }
+
+            &-item-two{
+                width: 164px;
+            }
+
+            &-modal {
+                right: -84px;
+                top: 92px;
+                &-container{
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 32px;
+
+                    &-button{
+                        margin-top: 36px;
+                    }
+                }
+            }
+
+            &-select{
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+
+    }
+
+
+    .product-box {
+        margin-top: 32px;
+        margin-bottom: 32px;
+
+        &__title {
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+
+    .product {
+        &__img {
+            width: 100%;
+        }
+
+        &__name {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &__price-box-item {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    .show-more {
+        margin-bottom: 32px;
+    }
+
+    .footer {
+        height: 364px;
+        padding-bottom: 33px;
+        flex-direction: column;
+
+        &__content {
+            column-gap: 100px;
+            margin-bottom: 70px;
+        }
+
+        &__form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+
+
+            &-subscribe {
+                width: 260px;
+            }
+        }
+    }
+}

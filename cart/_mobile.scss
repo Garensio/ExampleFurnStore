@@ -1,0 +1,153 @@
+@media (max-width: 767px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header {
+        padding-top: 32px;
+        border-bottom: none;
+
+        &__input {
+            display: none;
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__img {
+            width: 99px;
+        }
+
+        &__nav-mob {
+            display: block;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+    }
+
+    .top-cart {
+
+        &__title {
+            width: 100%;
+            margin-top: 82px;
+            font-size: 48px;
+            line-height: 59px;
+            text-align: center;
+            display: inline-block;
+        }
+    }
+
+    .cart {
+        row-gap: 48px;
+        margin-top: 92px;
+
+        &__item {
+            width: 343px;
+        }
+
+        &__name-box {
+            display: none;
+        }
+
+        &__img {
+            display: none;
+        }
+
+        &__info {
+
+            h4 {
+                font-size: 18px;
+                line-height: 22px;
+            }
+
+            &-description {
+                font-size: 12px;
+            }
+
+            &-price {
+                font-size: 12px;
+                line-height: 15px;
+            }
+
+
+        }
+
+
+        &__button-box {
+            margin-top: 0px;
+
+            &-item {
+                font-size: 12px;
+                line-height: 15px;
+                width: 166px;
+
+                &-two{
+                    background-color: black;
+                    color: white;
+                }
+            }
+
+        }
+
+        &__form{
+            width: 343px;
+        }
+    }
+
+    .product-box {
+        margin-top: 48px;
+        margin-bottom: 32px;
+
+        &__title {
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+
+    .product {
+        &__img {
+            width: 100%;
+        }
+
+        &__name {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &__price-box-item {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    .link-box {
+        margin-bottom: 32px;
+    }
+
+    .footer {
+        height: 364px;
+        padding-bottom: 33px;
+        flex-direction: column;
+
+        &__content {
+            column-gap: 100px;
+            margin-bottom: 70px;
+        }
+
+        &__form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+
+
+            &-subscribe {
+                width: 260px;
+            }
+        }
+    }
+}

@@ -1,0 +1,871 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
+.top {
+    background-image: url('../img/BackgroundCatalogHeader.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0px 16px 0px;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.8);
+}
+
+.header__input {
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: transparent;
+    font-family: inherit;
+    width: 288px;
+    height: 41px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+    padding-left: 32px;
+    box-sizing: border-box;
+}
+
+.header__input::placeholder {
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.header__listref {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 0px;
+    list-style: none;
+}
+
+.header__listref-item {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 2px;
+    text-decoration: none;
+    color: white;
+}
+
+.header__listref-item:hover {
+    text-decoration: underline;
+}
+
+.header__nav-mob {
+    display: none;
+}
+
+
+.top__content-title {
+    color: white;
+    margin-top: 127.25px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 70px;
+    width: 792px;
+    height: 140px;
+
+}
+
+.filter {
+    margin-top: 64px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.filter__left-text {
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0%;
+}
+
+.filter__button-box {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+
+    &-modal {
+        box-sizing: border-box;
+        position: absolute;
+        margin-top: 14px;
+        right: 0;
+
+        box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.32);
+        background: rgb(255, 255, 255);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10;
+        padding: 40px 48px 40px 48px;
+
+        &-range-price {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 0px;
+
+            color: rgb(0, 0, 0);
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            letter-spacing: 0%;
+            text-align: left;
+
+            &-left {
+                flex: none;
+                /* Отключаем гибкость, чтобы элементы не растягивались */
+                white-space: nowrap;
+                /* Запрещаем перенос текста */
+            }
+
+            &-right {
+                flex: none;
+                /* Отключаем гибкость, чтобы элементы не растягивались */
+                white-space: nowrap;
+                /* Запрещаем перенос текста */
+            }
+        }
+
+        &-range-sliders {
+
+            position: relative;
+            margin-bottom: 54px;
+
+            &-one {
+                position: absolute;
+                margin-top: 14px;
+            }
+
+            input[type="range"] {
+                /* Убираем стандартный вид бегунка в WebKit-браузерах: */
+                -webkit-appearance: none;
+                appearance: none;
+                cursor: pointer;
+                width: 189.05px;
+                height: 0;
+
+            }
+
+            input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                /* Убираем стандартный вид бегунка */
+                width: 15px;
+
+                /* Ширина бегунка */
+                height: 15px;
+                /* Высота бегунка */
+                background: #000;
+                /* Черный фон бегунка */
+                border-radius: 50%;
+                /* Скругленные углы бегунка до состояния круга */
+                cursor: pointer;
+                /* Меняем курсор мыши при наведении на бегунок */
+                transform: translateY(-50%);
+            }
+
+            input[type="range"]::-webkit-slider-runnable-track {
+                height: 0px;
+                border-top: 1px solid rgb(0, 0, 0);
+                cursor: pointer;
+            }
+
+
+
+        }
+
+        &-color-container {
+            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 14px;
+
+
+            &-section {
+                display: flex;
+                flex-direction: row;
+                column-gap: 14px;
+
+                label {
+                    width: 15px;
+                    height: 15px;
+                }
+
+                input[type="checkbox"] {
+                    display: none;
+                    /* Скрываем стандартные флажки */
+                }
+
+                input[type="checkbox"]+label {
+                    /* Устанавливаем относительное позиционирование метки */
+                    position: relative;
+                    /* Добавляем отступ слева для размещения стилизованного элемента */
+                    padding-left: 15px;
+                    /* Меняем курсор мыши при наведении на метку */
+                    cursor: pointer;
+                }
+
+
+
+                input[type="checkbox"]+label:before {
+                    content: '';
+                    /* Содержимое пусто, но стиль будет применен */
+                    position: absolute;
+                    /* Устанавливаем абсолютное позиционирование */
+                    left: 0;
+                    /* Выравниваем по левой стороне метки */
+                    top: 50%;
+                    /* Центрируем по вертикали относительно метки */
+                    transform: translateY(-50%);
+                    /* Поправка для точного центрирования */
+                    width: 15px;
+                    /* Ширина стилизованного элемента */
+                    height: 15px;
+                    box-sizing: border-box;
+
+                    /* Небольшое скругление углов */
+                    /* Белый фон внутри элемента */
+                }
+
+                input[type="checkbox"]:checked+label:after {
+                    content: '';
+                    /* Содержимое пусто, но стиль будет применен */
+                    position: absolute;
+                    /* Устанавливаем абсолютное позиционирование */
+                    width: 15px;
+                    height: 15px;
+                    top: 12%;
+                    background-image: url('data:image/svg+xml;utf8,<svg width="7.300781" height="7.067688" viewBox="0 0 7.30078 7.06769" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="Vector 1" d="M0.35 2.72L3.85 6.22L6.85 0.22" stroke="%23000000" stroke-opacity="1.000000" stroke-width="1.000000"/></svg>');
+                    background-repeat: no-repeat;
+                    background-size: 6.5px 6px;
+                    display: block;
+                    background-position: center;
+                    box-sizing: border-box;
+                    border: 1px solid rgb(0, 0, 0);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-white+label:before {
+                    background-color: #fff;
+                    border: 1px solid rgb(136, 136, 136);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-black+label:before {
+                    background-color: black;
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-black:checked+label:after {
+                    background-image: url('data:image/svg+xml;utf8,<svg width="7.300781" height="7.067688" viewBox="0 0 7.30078 7.06769" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="Vector 1" d="M0.35 2.72L3.85 6.22L6.85 0.22" stroke="%23FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000"/></svg>');
+                    border: 1px solid rgb(0, 0, 0);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-grey+label:before {
+                    background-color: rgb(115, 115, 115);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-red+label:before {
+                    background-color: red;
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-orange+label:before {
+                    background-color: rgb(255, 122, 65);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-yellow+label:before {
+                    background-color: rgb(242, 203, 1);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-green+label:before {
+                    background-color: rgb(0, 191, 42);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-turquoise+label:before {
+                    background-color: rgb(28, 204, 151);
+                }
+
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-blue+label:before {
+                    background-color: rgb(0, 159, 227);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-navy+label:before {
+                    background-color: rgb(0, 10, 248);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-violet+label:before {
+                    background-color: rgb(103, 16, 214);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-purple+label:before {
+                    background-color: rgb(157, 13, 181);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-rose+label:before {
+                    background-color: rgb(216, 154, 255);
+                }
+
+                input[type="checkbox"].filter__button-box-modal-color-container-section-pink+label:before {
+                    background-color: rgb(255, 101, 166);
+                }
+
+            }
+
+
+        }
+
+        &-container {
+            display: flex;
+            flex-direction: row;
+            column-gap: 65px;
+
+            legend {
+                color: rgb(5, 5, 5);
+                font-family: inherit;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: 0%;
+                text-align: left;
+            }
+
+            &-left {
+                width: 190.5px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 0px;
+                border: none;
+            }
+
+            &-right {
+                width: 190px;
+            }
+
+            &-radio-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 14px;
+                padding: 0px;
+                border: none;
+            }
+
+
+            &-button {
+                margin-top: 98px;
+                box-sizing: border-box;
+                border: 1px solid rgb(4, 4, 4);
+                border-radius: 20px;
+                text-align: center;
+                height: 40px;
+                width: 190px;
+                background-color: #fff;
+
+                color: rgb(0, 0, 0);
+                font-family: inherit;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: 0px;
+                text-align: center;
+
+            }
+
+        }
+
+    }
+
+    fieldset {
+        border: none;
+    }
+}
+
+.deadline {
+
+    margin-top: 16px;
+    margin-bottom: 32px;
+
+    input[type='radio'] {
+        appearance: none;
+    }
+
+    input[type="radio"]+label {
+        position: relative;
+        padding-left: 29px;
+        cursor: pointer;
+
+
+
+        color: rgb(0, 0, 0);
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0%;
+        text-align: left;
+
+    }
+
+    input[type="radio"]+label:before {
+        content: '';
+        /* Содержимое пусто, но стиль будет применен */
+        position: absolute;
+        /* Устанавливаем абсолютное позиционирование */
+        left: 0;
+        /* Выравниваем по левой стороне метки */
+        top: 50%;
+        /* Центрируем по вертикали относительно метки */
+        transform: translateY(-50%);
+        /* Поправка для точного центрирования */
+        width: 15px;
+        /* Ширина стилизованного элемента */
+        height: 15px;
+        /* Высота стилизованного элемента */
+        box-sizing: border-box;
+        border: 1px solid rgb(136, 136, 136);
+        border-radius: 60px;
+        background: #fff;
+        /* Белый фон внутри элемента */
+    }
+
+    input[type="radio"]:checked+label:after {
+        content: '';
+        /* Содержимое пусто, но стиль будет применен */
+        position: absolute;
+        /* Устанавливаем абсолютное позиционирование */
+        left: 0px;
+        /* Выравниваем по левой стороне метки со сдвигом */
+        top: 50%;
+        /* Центрируем по вертикали относительно метки */
+        transform: translateY(-50%);
+        /* Поправка для точного центрирования */
+        background-image: url('../img/tick.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        background-position: center;
+        width: 15px;
+        height: 15px;
+        /* Черный фон внутри маленького кружка */
+        box-sizing: border-box;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 60px;
+    }
+}
+
+.typeroom {
+    margin-top: 14px;
+
+    input[type='checkbox'] {
+        appearance: none;
+    }
+
+    input[type="checkbox"]+label {
+        position: relative;
+        padding-left: 29px;
+        cursor: pointer;
+
+
+        color: rgb(0, 0, 0);
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0%;
+        text-align: left;
+
+    }
+
+    input[type="checkbox"]+label:before {
+        content: '';
+        /* Содержимое пусто, но стиль будет применен */
+        position: absolute;
+        /* Устанавливаем абсолютное позиционирование */
+        left: 0;
+        /* Выравниваем по левой стороне метки */
+        top: 50%;
+        /* Центрируем по вертикали относительно метки */
+        transform: translateY(-50%);
+        /* Поправка для точного центрирования */
+        width: 15px;
+        /* Ширина стилизованного элемента */
+        height: 15px;
+        /* Высота стилизованного элемента */
+        box-sizing: border-box;
+        border: 1px solid rgb(136, 136, 136);
+        /* Белый фон внутри элемента */
+    }
+
+    input[type="checkbox"]:checked+label:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url('../img/tick.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        background-position: center;
+        width: 15px;
+        height: 15px;
+        box-sizing: border-box;
+        border: 1px solid rgb(0, 0, 0);
+    }
+}
+
+.filter__button-box-item {
+    box-sizing: border-box;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+
+
+
+}
+
+.filter__button-box-item-one {
+    width: 182px;
+}
+
+.filter__button-box-item-two {
+    width: 227px;
+}
+
+
+.filter__button-box-select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding-top: 9px;
+    padding-left: 23px;
+    padding-bottom: 11px;
+    border: none;
+    font-family: inherit;
+    appearance: none;
+    background-color: transparent;
+}
+
+.filter__button-box-select:focus {
+    outline: none;
+}
+
+.filter__button-box-item::after {
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 11px;
+    background-color: black;
+    pointer-events: none;
+    clip-path: polygon(10% 0%, 90% 0%, 50% 80%);
+}
+
+
+
+.filter__button-box-select-title {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+
+}
+
+
+
+.filter__button-box-select-selected {
+    font-family: inherit;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.product-box {
+    margin-top: 41px;
+    display: flex;
+    flex-direction: column;
+}
+
+.margin-to-show-more {
+    margin-bottom: 32px;
+}
+
+.product-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 32px;
+    row-gap: 56px;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 378px;
+}
+
+.product__img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.product__name {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+}
+
+
+.product__information {
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0%;
+    text-align: left;
+    color: rgb(136, 136, 136);
+}
+
+.product__price-box {
+    display: flex;
+    gap: 32px;
+}
+
+.product__price-box-item {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: left;
+    color: rgb(5, 5, 5);
+}
+
+
+.show-more {
+    margin-bottom: 64px;
+}
+
+.show-more__item {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(0, 0, 0);
+    padding: 2px;
+    letter-spacing: 0%;
+    text-align: left;
+    cursor: pointer;
+    text-decoration-line: underline;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+
+.show-more__item:hover {
+    color: rgb(136, 136, 136);
+    text-decoration: none;
+}
+
+.footer {
+    box-sizing: border-box;
+    background: rgb(247, 246, 246);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 32px;
+    height: 207px;
+}
+
+
+.footer__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: row;
+    column-gap: 129px;
+}
+
+.footer__item-listref {
+    list-style: none;
+}
+
+.footer__item-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+}
+
+.footer__item-contact {
+    color: rgb(136, 136, 136);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0%;
+    text-align: left;
+    text-decoration: none;
+}
+
+.footer__item-contact:hover {
+    text-decoration: underline;
+}
+
+.footer__item-listref-item {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #888888;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.footer__item-listref-item:hover {
+    text-decoration: underline;
+}
+
+
+.footer__form-subscribe-title {
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+}
+
+.footer__form-subscribe {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+}
+
+.footer__form-subscribe-input-email {
+    box-sizing: border-box;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 16px;
+    background: rgb(255, 255, 255);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0%;
+    text-align: left;
+    padding-left: 17px;
+    padding-top: 12px;
+    padding-bottom: 13px;
+}
+
+.footer__form-subscribe-input-email::placeholder {
+    color: rgb(196, 196, 196);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+
+.footer__form-subscribe-button {
+    background: rgba(222, 215, 215, 0.41);
+    box-sizing: border-box;
+    border-radius: 16px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0%;
+    text-align: left;
+    color: #000000;
+    font-family: inherit;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 13px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer__form-subscribe-button:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+
+.footer__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.footer__contacts-vk {
+    font-size: 0;
+}
+
+.footer__contacts-tg {
+    font-size: 0;
+}
+
+.footer__contacts-dzen {
+    font-size: 0;
+}
+
+.footer__contacts-vk:hover img,
+.footer__contacts-tg:hover img,
+.footer__contacts-dzen:hover img {
+    filter: brightness(0) saturate(100%);
+    transition: filter 0.3s ease;
+}
+
+@import 'tablet';
+@import 'mobile';
