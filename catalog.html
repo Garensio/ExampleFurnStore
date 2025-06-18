@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <title>Первый сайт</title>
+    <title>Каталог</title>
 </head>
 
 <body>
-    <section class="top center">
+    <section class="top top-catalog center">
         <header class="header">
-            <a href="./index.html"> <img class="header__img" href="./index.html" src="./img/logo.svg"
+            <a href="./index.html"> <img class="header__img" href="./index.html" src="../img/logo.svg"
                     alt="Логотип сайта"> </a>
             <input class="header__input" type="text" id="input" placeholder="Поиск">
             <nav class="header__nav">
@@ -94,143 +94,218 @@
             </div>
         </header>
         <div class="top__content">
-            <h1 class="top__content-title">Все, чего заслуживает ваш дом</h1>
-            <p class="top__content-quote">Наша мебель — ваше отражение</p>
-            <a href="./catalog.html" class="top__content-ref">Перейти в каталог</a>
+            <h1 class="top-cart__title">Каталог</h1>
         </div>
     </section>
 
-    <section class="for center">
-        <h2 class="for__title">Мебель для ...</h2>
-        <div class="for__content">
-            <div class="for__item for__item_1 for__item_big">ОТДЫХА</div>
-            <div class="for__item for__item_2 for__item_big">РАБОТЫ</div>
-            <div class="for__item for__item_3">КУХНИ</div>
-            <div class="for__item for__item_4">ДЕТСКОЙ</div>
-            <div class="for__item for__item_5">ВАННОЙ</div>
+    <section class="filter center">
+        <span class="filter__left-text">
+            Главная / Каталог товаров
+        </span>
+        <div class="filter__button-box">
+            <div class="filter__button-box-item filter__button-box-item-one">
+                <select class="filter__button-box-select">
+                    <option class="filter__button-box-select-title" value="" disabled selected>Фильтрация</option>
+                    <option class="filter__button-box-select-selected">Пункт 1</option>
+                    <option class="filter__button-box-select-selected">Пункт 2</option>
+                </select>
+                <form action="/submit" method="get" class="filter__button-box-modal">
+                    <div class="filter__button-box-modal-container">
+                        <div class="filter__button-box-modal-container-left">
+                            <fieldset class="filter__button-box-modal-fieldset">
+                                <legend><span>Сроки доставки</span></legend>
+                                <div class="filter__button-box-modal-container-radio-box deadline">
+                                    <div>
+                                        <input type="radio" id="nomatter" name="deadline" checked="true"><label
+                                            for="nomatter">Неважно</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="today" name="deadline"><label
+                                            for="today">Сегодня</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="tomorrow" name="deadline"><label
+                                            for="tomorrow">Завтра</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="threedays" name="deadline"><label for="threedays">До
+                                            трех дней</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="week" name="deadline"><label for="week">До семи
+                                            дней</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Цена</legend>
+                                <div class="filter__button-box-modal-range-price">
+                                    <div class="filter__button-box-modal-range-price-left">
+                                        <span>От 0 руб.</span>
+                                    </div>
+                                    <div class="filter__button-box-modal-range-price-right">
+                                        <span>До 100000 руб.</span>
+                                    </div>
+                                </div>
+                                <div class="filter__button-box-modal-range-sliders">
+                                    <input class="filter__button-box-modal-range-sliders-one" type="range" min="0"
+                                        max="100000" value="0" name="range-1" step="1">
+                                    <input class="filter__button-box-modal-range-sliders-one" type="range" min="0"
+                                        max="100000" value="100000" name="range-2" step="1">
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Цвет</legend>
+                                <div class="filter__button-box-modal-color-container">
+                                    <div class="filter__button-box-modal-color-container-section">
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-white"
+                                                type="checkbox" id="white" name="color"><label for="white"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-black"
+                                                type="checkbox" id="black" name="color"><label for="black"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-grey"
+                                                type="checkbox" id="grey" name="color"><label for="grey"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-red"
+                                                type="checkbox" id="red" name="color"><label for="red"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-orange"
+                                                type="checkbox" id="orange" name="color" checked="true"><label
+                                                for="orange"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-yellow"
+                                                type="checkbox" id="yellow" name="color" checked="true"><label
+                                                for="yellow"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-green"
+                                                type="checkbox" id="green" name="color"><label for="green"></label>
+                                        </div>
+                                    </div>
+                                    <div class="filter__button-box-modal-color-container-section">
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-turquoise"
+                                                type="checkbox" id="turquoise" name="color"><label
+                                                for="turquoise"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-blue"
+                                                type="checkbox" id="blue" name="color"><label for="blue"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-navy"
+                                                type="checkbox" id="navy" name="color"><label for="navy"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-violet"
+                                                type="checkbox" id="violet" name="color"><label for="violet"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-purple"
+                                                type="checkbox" id="purple" name="color"><label for="purple"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-rose"
+                                                type="checkbox" id="rose" name="color" checked="true"><label
+                                                for="rose"></label>
+                                        </div>
+                                        <div>
+                                            <input class="filter__button-box-modal-color-container-section-pink"
+                                                type="checkbox" id="pink" name="color"><label for="pink"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="filter__button-box-modal-container-right">
+                            <fieldset>
+                                <legend>Тип комнаты</legend>
+                                <div class="filter__button-box-modal-container-radio-box typeroom">
+                                    <div>
+                                        <input type="checkbox" id="kitchen" name="room" checked="true"><label
+                                            for="kitchen">Кухня и
+                                            столовая</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="washroom" name="room" checked="true"><label
+                                            for="washroom">Ванная
+                                            комната</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="childrenroom" name="room"><label
+                                            for="childrenroom">Детская комната</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="homestudy" name="room"><label
+                                            for="homestudy">Домашний офис</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="livingroom" name="room"><label
+                                            for="livingroom">Гостиная</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="holl" name="room"><label for="holl">Прихожая</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="bedroom" name="room"><label
+                                            for="bedroom">Спальня</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="checkroom " name="room"><label
+                                            for="checkroom ">Гардероб</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="cantryhouse" name="room"><label
+                                            for="cantryhouse">Дача</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="light" name="room"><label
+                                            for="light">Освещение</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <button class="filter__button-box-modal-container-button" type="submit">Применить</button>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </form>
+            </div>
+
+
+            <div class="filter__button-box-item filter__button-box-item-two">
+                <select class="filter__button-box-select">
+                    <option class="filter__button-box-select-title" value="" disabled selected>Порядок</option>
+                    <option class="filter__button-box-select-selected">По популярности</option>
+                    <option class="filter__button-box-select-selected">Сперва новые</option>
+                    <option class="filter__button-box-select-selected">Сперва старые</option>
+                    <option class="filter__button-box-select-selected">По цене</option>
+                </select>
+            </div>
         </div>
 
     </section>
 
-    <section class="product-box center">
-        <h2 class="product-box__title">Специальные предложения</h2>
+    <section class="product-box center margin-to-show-more">
         <div class="product-section">
             <article class="product">
                 <div class="product__img-container">
-                    <img class="product__img" src="./img/VODA.jpg" alt="Первый продукт">
-                    <div class="product__icons">
-                        <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <desc>
-                                Created with Pixso.
-                            </desc>
-                            <defs />
-                            <path id="Vector"
-                                d="M4 7L4 5C4 3.67 4.52 2.4 5.46 1.46C6.4 0.52 7.67 0 9 0C10.32 0 11.59 0.52 12.53 1.46C13.47 2.4 14 3.67 14 5L14 7L17 7C17.26 7 17.51 7.1 17.7 7.29C17.89 7.48 18 7.73 18 8L18 20C18 20.26 17.89 20.51 17.7 20.7C17.51 20.89 17.26 21 17 21L1 21C0.73 21 0.48 20.89 0.29 20.7C0.1 20.51 0 20.26 0 20L0 8C0 7.73 0.1 7.48 0.29 7.29C0.48 7.1 0.73 7 1 7L4 7ZM4 9L2 9L2 19L16 19L16 9L14 9L14 11L12 11L12 9L6 9L6 11L4 11L4 9ZM6 7L12 7L12 5C12 4.2 11.68 3.44 11.12 2.87C10.55 2.31 9.79 2 9 2C8.2 2 7.44 2.31 6.87 2.87C6.31 3.44 6 4.2 6 5L6 7Z"
-                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
-                        </svg>
-                        <svg width="20.000000" height="18.009094" viewBox="0 0 20 18.0091" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <desc>
-                                Created with Pixso.
-                            </desc>
-                            <defs />
-                            <path id="coolicon"
-                                d="M10 18C9.35 17.42 8.62 16.83 7.85 16.2L7.84 16.2C5.12 13.98 2.05 11.46 0.69 8.45C0.24 7.5 0.01 6.45 0 5.4C-0.01 3.95 0.57 2.56 1.61 1.54C2.64 0.52 4.04 -0.03 5.5 0C6.68 0 7.83 0.34 8.82 0.98C9.26 1.26 9.65 1.6 10 2C10.34 1.61 10.73 1.26 11.17 0.98C12.16 0.34 13.31 0 14.5 0C15.95 -0.03 17.35 0.52 18.38 1.54C19.42 2.56 20 3.95 20 5.4C19.98 6.45 19.75 7.5 19.3 8.46C17.94 11.47 14.87 13.98 12.15 16.2L12.14 16.2C11.37 16.83 10.64 17.43 10 18L10 18ZM5.5 2C4.56 1.98 3.66 2.34 3 2.99C2.35 3.62 1.99 4.49 2 5.4C2.01 6.17 2.18 6.93 2.51 7.62C3.15 8.92 4.01 10.1 5.06 11.1C6.06 12.1 7.2 13.06 8.18 13.88C8.45 14.1 8.73 14.33 9.01 14.56L9.18 14.7C9.45 14.92 9.73 15.14 10 15.37L10.01 15.35L10.01 15.35L10.02 15.35L10.03 15.34L10.03 15.34L10.04 15.34L10.06 15.33L10.1 15.29L10.1 15.29L10.12 15.28L10.12 15.28L10.13 15.27L10.79 14.73L10.97 14.58C11.25 14.36 11.53 14.13 11.8 13.9C12.79 13.09 13.93 12.12 14.92 11.12C15.97 10.12 16.83 8.94 17.48 7.65C17.81 6.94 17.99 6.17 18 5.4C18 4.49 17.64 3.63 17 3C16.33 2.35 15.43 1.99 14.5 2C13.36 1.99 12.27 2.46 11.51 3.31L10 5.05L8.49 3.31C7.72 2.46 6.63 1.99 5.5 2Z"
-                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
-                        </svg>
-                    </div>
-                </div>
-                <h3 class="product__name">Люстра VODA</h3>
-                <p class="product__information">Основание из полированной нержавеющей стали,
-                    придаёт оригинальный парящий эффект.
-                </p>
-                <div class="product__price-box">
-                    <p class="product__price-box-item">45 000 руб.</p>
-                    <p class="product__price-box-item product__price-box-item_old">67 000 руб.</p>
-                </div>
-            </article>
-            <article class="product">
-                <div class="product__img-container">
-                    <img class="product__img" src="./img/RONALD.jpg" alt="Первый продукт">
-                    <div class="product__icons">
-                        <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <desc>
-                                Created with Pixso.
-                            </desc>
-                            <defs />
-                            <path id="Vector"
-                                d="M4 7L4 5C4 3.67 4.52 2.4 5.46 1.46C6.4 0.52 7.67 0 9 0C10.32 0 11.59 0.52 12.53 1.46C13.47 2.4 14 3.67 14 5L14 7L17 7C17.26 7 17.51 7.1 17.7 7.29C17.89 7.48 18 7.73 18 8L18 20C18 20.26 17.89 20.51 17.7 20.7C17.51 20.89 17.26 21 17 21L1 21C0.73 21 0.48 20.89 0.29 20.7C0.1 20.51 0 20.26 0 20L0 8C0 7.73 0.1 7.48 0.29 7.29C0.48 7.1 0.73 7 1 7L4 7ZM4 9L2 9L2 19L16 19L16 9L14 9L14 11L12 11L12 9L6 9L6 11L4 11L4 9ZM6 7L12 7L12 5C12 4.2 11.68 3.44 11.12 2.87C10.55 2.31 9.79 2 9 2C8.2 2 7.44 2.31 6.87 2.87C6.31 3.44 6 4.2 6 5L6 7Z"
-                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
-                        </svg>
-                        <svg width="20.000000" height="18.009094" viewBox="0 0 20 18.0091" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <desc>
-                                Created with Pixso.
-                            </desc>
-                            <defs />
-                            <path id="coolicon"
-                                d="M10 18C9.35 17.42 8.62 16.83 7.85 16.2L7.84 16.2C5.12 13.98 2.05 11.46 0.69 8.45C0.24 7.5 0.01 6.45 0 5.4C-0.01 3.95 0.57 2.56 1.61 1.54C2.64 0.52 4.04 -0.03 5.5 0C6.68 0 7.83 0.34 8.82 0.98C9.26 1.26 9.65 1.6 10 2C10.34 1.61 10.73 1.26 11.17 0.98C12.16 0.34 13.31 0 14.5 0C15.95 -0.03 17.35 0.52 18.38 1.54C19.42 2.56 20 3.95 20 5.4C19.98 6.45 19.75 7.5 19.3 8.46C17.94 11.47 14.87 13.98 12.15 16.2L12.14 16.2C11.37 16.83 10.64 17.43 10 18L10 18ZM5.5 2C4.56 1.98 3.66 2.34 3 2.99C2.35 3.62 1.99 4.49 2 5.4C2.01 6.17 2.18 6.93 2.51 7.62C3.15 8.92 4.01 10.1 5.06 11.1C6.06 12.1 7.2 13.06 8.18 13.88C8.45 14.1 8.73 14.33 9.01 14.56L9.18 14.7C9.45 14.92 9.73 15.14 10 15.37L10.01 15.35L10.01 15.35L10.02 15.35L10.03 15.34L10.03 15.34L10.04 15.34L10.06 15.33L10.1 15.29L10.1 15.29L10.12 15.28L10.12 15.28L10.13 15.27L10.79 14.73L10.97 14.58C11.25 14.36 11.53 14.13 11.8 13.9C12.79 13.09 13.93 12.12 14.92 11.12C15.97 10.12 16.83 8.94 17.48 7.65C17.81 6.94 17.99 6.17 18 5.4C18 4.49 17.64 3.63 17 3C16.33 2.35 15.43 1.99 14.5 2C13.36 1.99 12.27 2.46 11.51 3.31L10 5.05L8.49 3.31C7.72 2.46 6.63 1.99 5.5 2Z"
-                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
-                        </svg>
-                    </div>
-                </div>
-                <h3 class="product__name">Диван RONALD</h3>
-                <p class="product__information">Модель отличается простотой диний и форм,
-                    отсутствием броского декора.
-                </p>
-                <div class="product__price-box">
-                    <p class="product__price-box-item">156 000 руб.</p>
-                    <p class="product__price-box-item product__price-box-item_old">198 000 руб.</p>
-                </div>
-            </article>
-            <article class="product">
-                <div class="product__img-container">
-                    <img class="product__img" src="./img/VENT.jpg" alt="Первый продукт">
-                    <div class="product__icons">
-                        <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <desc>
-                                Created with Pixso.
-                            </desc>
-                            <defs />
-                            <path id="Vector"
-                                d="M4 7L4 5C4 3.67 4.52 2.4 5.46 1.46C6.4 0.52 7.67 0 9 0C10.32 0 11.59 0.52 12.53 1.46C13.47 2.4 14 3.67 14 5L14 7L17 7C17.26 7 17.51 7.1 17.7 7.29C17.89 7.48 18 7.73 18 8L18 20C18 20.26 17.89 20.51 17.7 20.7C17.51 20.89 17.26 21 17 21L1 21C0.73 21 0.48 20.89 0.29 20.7C0.1 20.51 0 20.26 0 20L0 8C0 7.73 0.1 7.48 0.29 7.29C0.48 7.1 0.73 7 1 7L4 7ZM4 9L2 9L2 19L16 19L16 9L14 9L14 11L12 11L12 9L6 9L6 11L4 11L4 9ZM6 7L12 7L12 5C12 4.2 11.68 3.44 11.12 2.87C10.55 2.31 9.79 2 9 2C8.2 2 7.44 2.31 6.87 2.87C6.31 3.44 6 4.2 6 5L6 7Z"
-                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
-                        </svg>
-                        <svg width="20.000000" height="18.009094" viewBox="0 0 20 18.0091" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <desc>
-                                Created with Pixso.
-                            </desc>
-                            <defs />
-                            <path id="coolicon"
-                                d="M10 18C9.35 17.42 8.62 16.83 7.85 16.2L7.84 16.2C5.12 13.98 2.05 11.46 0.69 8.45C0.24 7.5 0.01 6.45 0 5.4C-0.01 3.95 0.57 2.56 1.61 1.54C2.64 0.52 4.04 -0.03 5.5 0C6.68 0 7.83 0.34 8.82 0.98C9.26 1.26 9.65 1.6 10 2C10.34 1.61 10.73 1.26 11.17 0.98C12.16 0.34 13.31 0 14.5 0C15.95 -0.03 17.35 0.52 18.38 1.54C19.42 2.56 20 3.95 20 5.4C19.98 6.45 19.75 7.5 19.3 8.46C17.94 11.47 14.87 13.98 12.15 16.2L12.14 16.2C11.37 16.83 10.64 17.43 10 18L10 18ZM5.5 2C4.56 1.98 3.66 2.34 3 2.99C2.35 3.62 1.99 4.49 2 5.4C2.01 6.17 2.18 6.93 2.51 7.62C3.15 8.92 4.01 10.1 5.06 11.1C6.06 12.1 7.2 13.06 8.18 13.88C8.45 14.1 8.73 14.33 9.01 14.56L9.18 14.7C9.45 14.92 9.73 15.14 10 15.37L10.01 15.35L10.01 15.35L10.02 15.35L10.03 15.34L10.03 15.34L10.04 15.34L10.06 15.33L10.1 15.29L10.1 15.29L10.12 15.28L10.12 15.28L10.13 15.27L10.79 14.73L10.97 14.58C11.25 14.36 11.53 14.13 11.8 13.9C12.79 13.09 13.93 12.12 14.92 11.12C15.97 10.12 16.83 8.94 17.48 7.65C17.81 6.94 17.99 6.17 18 5.4C18 4.49 17.64 3.63 17 3C16.33 2.35 15.43 1.99 14.5 2C13.36 1.99 12.27 2.46 11.51 3.31L10 5.05L8.49 3.31C7.72 2.46 6.63 1.99 5.5 2Z"
-                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
-                        </svg>
-                    </div>
-                </div>
-                <h3 class="product__name">Комод VENT</h3>
-                <p class="product__information">Европейский дуб - отличается особой
-                    прочностью и стабильностью.
-                </p>
-                <div class="product__price-box">
-                    <p class="product__price-box-item">34 000 руб.</p>
-                    <p class="product__price-box-item product__price-box-item_old">45 000 руб.</p>
-                </div>
-            </article>
-        </div>
-    </section>
-
-
-    <section class="product-box center margin-to-link-box">
-        <h2 class="product-box__title">Каталог товаров</h2>
-        <div class="product-section">
-            <article class="product">
-                <div class="product__img-container">
-                    <img class="product__img" src="./img/TATRAN.jpg" alt="Первый продукт">
-                    <div class="product__icons">
+                    <img class="product__img" src="../img/catalog_1.jpg" alt="Первый продукт">
+                     <div class="product__icons">
                         <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <desc>
@@ -261,8 +336,8 @@
             </article>
             <article class="product">
                 <div class="product__img-container">
-                    <img class="product__img" src="./img/VILORA.jpg" alt="Первый продукт">
-                    <div class="product__icons">
+                    <img class="product__img" src="../img/catalog_2.jpg" alt="Первый продукт">
+                     <div class="product__icons">
                         <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <desc>
@@ -293,8 +368,8 @@
             </article>
             <article class="product">
                 <div class="product__img-container">
-                    <img class="product__img" src="./img/MENU.jpg" alt="Первый продукт">
-                    <div class="product__icons">
+                    <img class="product__img" src="../img/catalog_3.jpg" alt="Первый продукт">
+                     <div class="product__icons">
                         <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <desc>
@@ -325,8 +400,8 @@
             </article>
             <article class="product">
                 <div class="product__img-container">
-                    <img class="product__img" src="./img/ASKESTA.jpg" alt="Первый продукт">
-                    <div class="product__icons">
+                    <img class="product__img" src="../img/catalog_4.jpg" alt="Первый продукт">
+                     <div class="product__icons">
                         <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <desc>
@@ -349,16 +424,16 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="product__name">Кровать ASKESTA</h3>
-                <p class="product__information">Высокоэластичный пенополиуретан в «начинке»
-                    кресла надежен и долговечен
+                <h3 class="product__name">Диван ASKESTA</h3>
+                <p class="product__information">Благодаря защелкивающемуся механизму диван
+                    легко раскладывается в комфортную кровать
                 </p>
                 <p class="product__price-box-item">68 000 руб.</p>
             </article>
             <article class="product">
                 <div class="product__img-container">
-                    <img class="product__img" src="./img/NORMAN.jpg" alt="Первый продукт">
-                    <div class="product__icons">
+                    <img class="product__img" src="../img/catalog_5.jpg" alt="Первый продукт">
+                     <div class="product__icons">
                         <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <desc>
@@ -381,7 +456,7 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="product__name">Стол NORMAN</h3>
+                <h3 class="product__name">Кресло LUNAR</h3>
                 <p class="product__information">Прекрасно переносит солнечные лучи,
                     перепады влажности и любые осадки
                 </p>
@@ -389,8 +464,8 @@
             </article>
             <article class="product">
                 <div class="product__img-container">
-                    <img class="product__img" src="./img/NASTAN.jpg" alt="Первый продукт">
-                    <div class="product__icons">
+                    <img class="product__img" src="../img/catalog_6.jpg" alt="Первый продукт">
+                     <div class="product__icons">
                         <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <desc>
@@ -413,23 +488,216 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="product__name">Диван NASTAN</h3>
-                <p class="product__information">Модель отличается простотой линий и форм,
-                    отсутствием броского декора.
+                <h3 class="product__name">Шкаф Nastan</h3>
+                <p class="product__information">Мебель может быть оснащена
+                    разнообразными системами подсветки.
+                </p>
+                <p class="product__price-box-item">80 000 руб.</p>
+            </article>
+            <article class="product">
+                <div class="product__img-container">
+                    <img class="product__img" src="../img/catalog_1.jpg" alt="Первый продукт">
+                     <div class="product__icons">
+                        <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector"
+                                d="M4 7L4 5C4 3.67 4.52 2.4 5.46 1.46C6.4 0.52 7.67 0 9 0C10.32 0 11.59 0.52 12.53 1.46C13.47 2.4 14 3.67 14 5L14 7L17 7C17.26 7 17.51 7.1 17.7 7.29C17.89 7.48 18 7.73 18 8L18 20C18 20.26 17.89 20.51 17.7 20.7C17.51 20.89 17.26 21 17 21L1 21C0.73 21 0.48 20.89 0.29 20.7C0.1 20.51 0 20.26 0 20L0 8C0 7.73 0.1 7.48 0.29 7.29C0.48 7.1 0.73 7 1 7L4 7ZM4 9L2 9L2 19L16 19L16 9L14 9L14 11L12 11L12 9L6 9L6 11L4 11L4 9ZM6 7L12 7L12 5C12 4.2 11.68 3.44 11.12 2.87C10.55 2.31 9.79 2 9 2C8.2 2 7.44 2.31 6.87 2.87C6.31 3.44 6 4.2 6 5L6 7Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                        <svg width="20.000000" height="18.009094" viewBox="0 0 20 18.0091" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="coolicon"
+                                d="M10 18C9.35 17.42 8.62 16.83 7.85 16.2L7.84 16.2C5.12 13.98 2.05 11.46 0.69 8.45C0.24 7.5 0.01 6.45 0 5.4C-0.01 3.95 0.57 2.56 1.61 1.54C2.64 0.52 4.04 -0.03 5.5 0C6.68 0 7.83 0.34 8.82 0.98C9.26 1.26 9.65 1.6 10 2C10.34 1.61 10.73 1.26 11.17 0.98C12.16 0.34 13.31 0 14.5 0C15.95 -0.03 17.35 0.52 18.38 1.54C19.42 2.56 20 3.95 20 5.4C19.98 6.45 19.75 7.5 19.3 8.46C17.94 11.47 14.87 13.98 12.15 16.2L12.14 16.2C11.37 16.83 10.64 17.43 10 18L10 18ZM5.5 2C4.56 1.98 3.66 2.34 3 2.99C2.35 3.62 1.99 4.49 2 5.4C2.01 6.17 2.18 6.93 2.51 7.62C3.15 8.92 4.01 10.1 5.06 11.1C6.06 12.1 7.2 13.06 8.18 13.88C8.45 14.1 8.73 14.33 9.01 14.56L9.18 14.7C9.45 14.92 9.73 15.14 10 15.37L10.01 15.35L10.01 15.35L10.02 15.35L10.03 15.34L10.03 15.34L10.04 15.34L10.06 15.33L10.1 15.29L10.1 15.29L10.12 15.28L10.12 15.28L10.13 15.27L10.79 14.73L10.97 14.58C11.25 14.36 11.53 14.13 11.8 13.9C12.79 13.09 13.93 12.12 14.92 11.12C15.97 10.12 16.83 8.94 17.48 7.65C17.81 6.94 17.99 6.17 18 5.4C18 4.49 17.64 3.63 17 3C16.33 2.35 15.43 1.99 14.5 2C13.36 1.99 12.27 2.46 11.51 3.31L10 5.05L8.49 3.31C7.72 2.46 6.63 1.99 5.5 2Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="product__name">Кровать TATRAN</h3>
+                <p class="product__information">Основание из полированной нержавеющей стали,
+                    придает оригинальный парящий эффект.
+                </p>
+                <p class="product__price-box-item">120 000 руб.</p>
+            </article>
+            <article class="product">
+                <div class="product__img-container">
+                    <img class="product__img" src="../img/catalog_2.jpg" alt="Первый продукт">
+                     <div class="product__icons">
+                        <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector"
+                                d="M4 7L4 5C4 3.67 4.52 2.4 5.46 1.46C6.4 0.52 7.67 0 9 0C10.32 0 11.59 0.52 12.53 1.46C13.47 2.4 14 3.67 14 5L14 7L17 7C17.26 7 17.51 7.1 17.7 7.29C17.89 7.48 18 7.73 18 8L18 20C18 20.26 17.89 20.51 17.7 20.7C17.51 20.89 17.26 21 17 21L1 21C0.73 21 0.48 20.89 0.29 20.7C0.1 20.51 0 20.26 0 20L0 8C0 7.73 0.1 7.48 0.29 7.29C0.48 7.1 0.73 7 1 7L4 7ZM4 9L2 9L2 19L16 19L16 9L14 9L14 11L12 11L12 9L6 9L6 11L4 11L4 9ZM6 7L12 7L12 5C12 4.2 11.68 3.44 11.12 2.87C10.55 2.31 9.79 2 9 2C8.2 2 7.44 2.31 6.87 2.87C6.31 3.44 6 4.2 6 5L6 7Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                        <svg width="20.000000" height="18.009094" viewBox="0 0 20 18.0091" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="coolicon"
+                                d="M10 18C9.35 17.42 8.62 16.83 7.85 16.2L7.84 16.2C5.12 13.98 2.05 11.46 0.69 8.45C0.24 7.5 0.01 6.45 0 5.4C-0.01 3.95 0.57 2.56 1.61 1.54C2.64 0.52 4.04 -0.03 5.5 0C6.68 0 7.83 0.34 8.82 0.98C9.26 1.26 9.65 1.6 10 2C10.34 1.61 10.73 1.26 11.17 0.98C12.16 0.34 13.31 0 14.5 0C15.95 -0.03 17.35 0.52 18.38 1.54C19.42 2.56 20 3.95 20 5.4C19.98 6.45 19.75 7.5 19.3 8.46C17.94 11.47 14.87 13.98 12.15 16.2L12.14 16.2C11.37 16.83 10.64 17.43 10 18L10 18ZM5.5 2C4.56 1.98 3.66 2.34 3 2.99C2.35 3.62 1.99 4.49 2 5.4C2.01 6.17 2.18 6.93 2.51 7.62C3.15 8.92 4.01 10.1 5.06 11.1C6.06 12.1 7.2 13.06 8.18 13.88C8.45 14.1 8.73 14.33 9.01 14.56L9.18 14.7C9.45 14.92 9.73 15.14 10 15.37L10.01 15.35L10.01 15.35L10.02 15.35L10.03 15.34L10.03 15.34L10.04 15.34L10.06 15.33L10.1 15.29L10.1 15.29L10.12 15.28L10.12 15.28L10.13 15.27L10.79 14.73L10.97 14.58C11.25 14.36 11.53 14.13 11.8 13.9C12.79 13.09 13.93 12.12 14.92 11.12C15.97 10.12 16.83 8.94 17.48 7.65C17.81 6.94 17.99 6.17 18 5.4C18 4.49 17.64 3.63 17 3C16.33 2.35 15.43 1.99 14.5 2C13.36 1.99 12.27 2.46 11.51 3.31L10 5.05L8.49 3.31C7.72 2.46 6.63 1.99 5.5 2Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="product__name">Кресло VILORA</h3>
+                <p class="product__information">Мягкое и уютное, аккуратное и стильное.
+                    Упругие подушки сиденья и приятная на ощупь ткань.
+                </p>
+                <p class="product__price-box-item">21 000 руб.</p>
+            </article>
+            <article class="product">
+                <div class="product__img-container">
+                    <img class="product__img" src="../img/catalog_3.jpg" alt="Первый продукт">
+                     <div class="product__icons">
+                        <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector"
+                                d="M4 7L4 5C4 3.67 4.52 2.4 5.46 1.46C6.4 0.52 7.67 0 9 0C10.32 0 11.59 0.52 12.53 1.46C13.47 2.4 14 3.67 14 5L14 7L17 7C17.26 7 17.51 7.1 17.7 7.29C17.89 7.48 18 7.73 18 8L18 20C18 20.26 17.89 20.51 17.7 20.7C17.51 20.89 17.26 21 17 21L1 21C0.73 21 0.48 20.89 0.29 20.7C0.1 20.51 0 20.26 0 20L0 8C0 7.73 0.1 7.48 0.29 7.29C0.48 7.1 0.73 7 1 7L4 7ZM4 9L2 9L2 19L16 19L16 9L14 9L14 11L12 11L12 9L6 9L6 11L4 11L4 9ZM6 7L12 7L12 5C12 4.2 11.68 3.44 11.12 2.87C10.55 2.31 9.79 2 9 2C8.2 2 7.44 2.31 6.87 2.87C6.31 3.44 6 4.2 6 5L6 7Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                        <svg width="20.000000" height="18.009094" viewBox="0 0 20 18.0091" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="coolicon"
+                                d="M10 18C9.35 17.42 8.62 16.83 7.85 16.2L7.84 16.2C5.12 13.98 2.05 11.46 0.69 8.45C0.24 7.5 0.01 6.45 0 5.4C-0.01 3.95 0.57 2.56 1.61 1.54C2.64 0.52 4.04 -0.03 5.5 0C6.68 0 7.83 0.34 8.82 0.98C9.26 1.26 9.65 1.6 10 2C10.34 1.61 10.73 1.26 11.17 0.98C12.16 0.34 13.31 0 14.5 0C15.95 -0.03 17.35 0.52 18.38 1.54C19.42 2.56 20 3.95 20 5.4C19.98 6.45 19.75 7.5 19.3 8.46C17.94 11.47 14.87 13.98 12.15 16.2L12.14 16.2C11.37 16.83 10.64 17.43 10 18L10 18ZM5.5 2C4.56 1.98 3.66 2.34 3 2.99C2.35 3.62 1.99 4.49 2 5.4C2.01 6.17 2.18 6.93 2.51 7.62C3.15 8.92 4.01 10.1 5.06 11.1C6.06 12.1 7.2 13.06 8.18 13.88C8.45 14.1 8.73 14.33 9.01 14.56L9.18 14.7C9.45 14.92 9.73 15.14 10 15.37L10.01 15.35L10.01 15.35L10.02 15.35L10.03 15.34L10.03 15.34L10.04 15.34L10.06 15.33L10.1 15.29L10.1 15.29L10.12 15.28L10.12 15.28L10.13 15.27L10.79 14.73L10.97 14.58C11.25 14.36 11.53 14.13 11.8 13.9C12.79 13.09 13.93 12.12 14.92 11.12C15.97 10.12 16.83 8.94 17.48 7.65C17.81 6.94 17.99 6.17 18 5.4C18 4.49 17.64 3.63 17 3C16.33 2.35 15.43 1.99 14.5 2C13.36 1.99 12.27 2.46 11.51 3.31L10 5.05L8.49 3.31C7.72 2.46 6.63 1.99 5.5 2Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="product__name">Стол MENU</h3>
+                <p class="product__information">Для того чтобы трапезничать было приятно,
+                    необходим правильный обеденный стол.
+                </p>
+                <p class="product__price-box-item">34 000 руб.</p>
+            </article>
+            <article class="product">
+                <div class="product__img-container">
+                    <img class="product__img" src="../img/catalog_4.jpg" alt="Первый продукт">
+                     <div class="product__icons">
+                        <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector"
+                                d="M4 7L4 5C4 3.67 4.52 2.4 5.46 1.46C6.4 0.52 7.67 0 9 0C10.32 0 11.59 0.52 12.53 1.46C13.47 2.4 14 3.67 14 5L14 7L17 7C17.26 7 17.51 7.1 17.7 7.29C17.89 7.48 18 7.73 18 8L18 20C18 20.26 17.89 20.51 17.7 20.7C17.51 20.89 17.26 21 17 21L1 21C0.73 21 0.48 20.89 0.29 20.7C0.1 20.51 0 20.26 0 20L0 8C0 7.73 0.1 7.48 0.29 7.29C0.48 7.1 0.73 7 1 7L4 7ZM4 9L2 9L2 19L16 19L16 9L14 9L14 11L12 11L12 9L6 9L6 11L4 11L4 9ZM6 7L12 7L12 5C12 4.2 11.68 3.44 11.12 2.87C10.55 2.31 9.79 2 9 2C8.2 2 7.44 2.31 6.87 2.87C6.31 3.44 6 4.2 6 5L6 7Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                        <svg width="20.000000" height="18.009094" viewBox="0 0 20 18.0091" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="coolicon"
+                                d="M10 18C9.35 17.42 8.62 16.83 7.85 16.2L7.84 16.2C5.12 13.98 2.05 11.46 0.69 8.45C0.24 7.5 0.01 6.45 0 5.4C-0.01 3.95 0.57 2.56 1.61 1.54C2.64 0.52 4.04 -0.03 5.5 0C6.68 0 7.83 0.34 8.82 0.98C9.26 1.26 9.65 1.6 10 2C10.34 1.61 10.73 1.26 11.17 0.98C12.16 0.34 13.31 0 14.5 0C15.95 -0.03 17.35 0.52 18.38 1.54C19.42 2.56 20 3.95 20 5.4C19.98 6.45 19.75 7.5 19.3 8.46C17.94 11.47 14.87 13.98 12.15 16.2L12.14 16.2C11.37 16.83 10.64 17.43 10 18L10 18ZM5.5 2C4.56 1.98 3.66 2.34 3 2.99C2.35 3.62 1.99 4.49 2 5.4C2.01 6.17 2.18 6.93 2.51 7.62C3.15 8.92 4.01 10.1 5.06 11.1C6.06 12.1 7.2 13.06 8.18 13.88C8.45 14.1 8.73 14.33 9.01 14.56L9.18 14.7C9.45 14.92 9.73 15.14 10 15.37L10.01 15.35L10.01 15.35L10.02 15.35L10.03 15.34L10.03 15.34L10.04 15.34L10.06 15.33L10.1 15.29L10.1 15.29L10.12 15.28L10.12 15.28L10.13 15.27L10.79 14.73L10.97 14.58C11.25 14.36 11.53 14.13 11.8 13.9C12.79 13.09 13.93 12.12 14.92 11.12C15.97 10.12 16.83 8.94 17.48 7.65C17.81 6.94 17.99 6.17 18 5.4C18 4.49 17.64 3.63 17 3C16.33 2.35 15.43 1.99 14.5 2C13.36 1.99 12.27 2.46 11.51 3.31L10 5.05L8.49 3.31C7.72 2.46 6.63 1.99 5.5 2Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="product__name">Диван ASKESTA</h3>
+                <p class="product__information">Благодаря защелкивающемуся механизму диван
+                    легко раскладывается в комфортную кровать
+                </p>
+                <p class="product__price-box-item">68 000 руб.</p>
+            </article>
+            <article class="product">
+                <div class="product__img-container">
+                    <img class="product__img" src="../img/catalog_5.jpg" alt="Первый продукт">
+                     <div class="product__icons">
+                        <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector"
+                                d="M4 7L4 5C4 3.67 4.52 2.4 5.46 1.46C6.4 0.52 7.67 0 9 0C10.32 0 11.59 0.52 12.53 1.46C13.47 2.4 14 3.67 14 5L14 7L17 7C17.26 7 17.51 7.1 17.7 7.29C17.89 7.48 18 7.73 18 8L18 20C18 20.26 17.89 20.51 17.7 20.7C17.51 20.89 17.26 21 17 21L1 21C0.73 21 0.48 20.89 0.29 20.7C0.1 20.51 0 20.26 0 20L0 8C0 7.73 0.1 7.48 0.29 7.29C0.48 7.1 0.73 7 1 7L4 7ZM4 9L2 9L2 19L16 19L16 9L14 9L14 11L12 11L12 9L6 9L6 11L4 11L4 9ZM6 7L12 7L12 5C12 4.2 11.68 3.44 11.12 2.87C10.55 2.31 9.79 2 9 2C8.2 2 7.44 2.31 6.87 2.87C6.31 3.44 6 4.2 6 5L6 7Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                        <svg width="20.000000" height="18.009094" viewBox="0 0 20 18.0091" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="coolicon"
+                                d="M10 18C9.35 17.42 8.62 16.83 7.85 16.2L7.84 16.2C5.12 13.98 2.05 11.46 0.69 8.45C0.24 7.5 0.01 6.45 0 5.4C-0.01 3.95 0.57 2.56 1.61 1.54C2.64 0.52 4.04 -0.03 5.5 0C6.68 0 7.83 0.34 8.82 0.98C9.26 1.26 9.65 1.6 10 2C10.34 1.61 10.73 1.26 11.17 0.98C12.16 0.34 13.31 0 14.5 0C15.95 -0.03 17.35 0.52 18.38 1.54C19.42 2.56 20 3.95 20 5.4C19.98 6.45 19.75 7.5 19.3 8.46C17.94 11.47 14.87 13.98 12.15 16.2L12.14 16.2C11.37 16.83 10.64 17.43 10 18L10 18ZM5.5 2C4.56 1.98 3.66 2.34 3 2.99C2.35 3.62 1.99 4.49 2 5.4C2.01 6.17 2.18 6.93 2.51 7.62C3.15 8.92 4.01 10.1 5.06 11.1C6.06 12.1 7.2 13.06 8.18 13.88C8.45 14.1 8.73 14.33 9.01 14.56L9.18 14.7C9.45 14.92 9.73 15.14 10 15.37L10.01 15.35L10.01 15.35L10.02 15.35L10.03 15.34L10.03 15.34L10.04 15.34L10.06 15.33L10.1 15.29L10.1 15.29L10.12 15.28L10.12 15.28L10.13 15.27L10.79 14.73L10.97 14.58C11.25 14.36 11.53 14.13 11.8 13.9C12.79 13.09 13.93 12.12 14.92 11.12C15.97 10.12 16.83 8.94 17.48 7.65C17.81 6.94 17.99 6.17 18 5.4C18 4.49 17.64 3.63 17 3C16.33 2.35 15.43 1.99 14.5 2C13.36 1.99 12.27 2.46 11.51 3.31L10 5.05L8.49 3.31C7.72 2.46 6.63 1.99 5.5 2Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="product__name">Кресло LUNAR</h3>
+                <p class="product__information">Прекрасно переносит солнечные лучи,
+                    перепады влажности и любые осадки
+                </p>
+                <p class="product__price-box-item">40 000 руб.</p>
+            </article>
+            <article class="product">
+                <div class="product__img-container">
+                    <img class="product__img" src="../img/catalog_6.jpg" alt="Первый продукт">
+                     <div class="product__icons">
+                        <svg width="18.000000" height="21.000000" viewBox="0 0 18 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector"
+                                d="M4 7L4 5C4 3.67 4.52 2.4 5.46 1.46C6.4 0.52 7.67 0 9 0C10.32 0 11.59 0.52 12.53 1.46C13.47 2.4 14 3.67 14 5L14 7L17 7C17.26 7 17.51 7.1 17.7 7.29C17.89 7.48 18 7.73 18 8L18 20C18 20.26 17.89 20.51 17.7 20.7C17.51 20.89 17.26 21 17 21L1 21C0.73 21 0.48 20.89 0.29 20.7C0.1 20.51 0 20.26 0 20L0 8C0 7.73 0.1 7.48 0.29 7.29C0.48 7.1 0.73 7 1 7L4 7ZM4 9L2 9L2 19L16 19L16 9L14 9L14 11L12 11L12 9L6 9L6 11L4 11L4 9ZM6 7L12 7L12 5C12 4.2 11.68 3.44 11.12 2.87C10.55 2.31 9.79 2 9 2C8.2 2 7.44 2.31 6.87 2.87C6.31 3.44 6 4.2 6 5L6 7Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                        <svg width="20.000000" height="18.009094" viewBox="0 0 20 18.0091" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="coolicon"
+                                d="M10 18C9.35 17.42 8.62 16.83 7.85 16.2L7.84 16.2C5.12 13.98 2.05 11.46 0.69 8.45C0.24 7.5 0.01 6.45 0 5.4C-0.01 3.95 0.57 2.56 1.61 1.54C2.64 0.52 4.04 -0.03 5.5 0C6.68 0 7.83 0.34 8.82 0.98C9.26 1.26 9.65 1.6 10 2C10.34 1.61 10.73 1.26 11.17 0.98C12.16 0.34 13.31 0 14.5 0C15.95 -0.03 17.35 0.52 18.38 1.54C19.42 2.56 20 3.95 20 5.4C19.98 6.45 19.75 7.5 19.3 8.46C17.94 11.47 14.87 13.98 12.15 16.2L12.14 16.2C11.37 16.83 10.64 17.43 10 18L10 18ZM5.5 2C4.56 1.98 3.66 2.34 3 2.99C2.35 3.62 1.99 4.49 2 5.4C2.01 6.17 2.18 6.93 2.51 7.62C3.15 8.92 4.01 10.1 5.06 11.1C6.06 12.1 7.2 13.06 8.18 13.88C8.45 14.1 8.73 14.33 9.01 14.56L9.18 14.7C9.45 14.92 9.73 15.14 10 15.37L10.01 15.35L10.01 15.35L10.02 15.35L10.03 15.34L10.03 15.34L10.04 15.34L10.06 15.33L10.1 15.29L10.1 15.29L10.12 15.28L10.12 15.28L10.13 15.27L10.79 14.73L10.97 14.58C11.25 14.36 11.53 14.13 11.8 13.9C12.79 13.09 13.93 12.12 14.92 11.12C15.97 10.12 16.83 8.94 17.48 7.65C17.81 6.94 17.99 6.17 18 5.4C18 4.49 17.64 3.63 17 3C16.33 2.35 15.43 1.99 14.5 2C13.36 1.99 12.27 2.46 11.51 3.31L10 5.05L8.49 3.31C7.72 2.46 6.63 1.99 5.5 2Z"
+                                fill="#C4C4C4" fill-opacity="1.000000" fill-rule="nonzero" />
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="product__name">Шкаф Nastan</h3>
+                <p class="product__information">Мебель может быть оснащена
+                    разнообразными системами подсветки.
                 </p>
                 <p class="product__price-box-item">80 000 руб.</p>
             </article>
         </div>
     </section>
 
-    <section class="link-box center">
-        <a href="./catalog.html" class="link-box__ref">Перейти в каталог</a>
+    <section class="show-more center">
+        <a class="show-more__item">Показать ещё</a>
     </section>
 
 
     <footer class="footer center">
         <div class="footer__logo">
-            <a href="./index.html"><img class="footer__logo-img" src="./img/logo-footer.svg" alt="Логотип сайта"></a>
+            <a href="./index.html"> <img class="footer__logo-img" src="../img/logo-footer.svg" alt="Логотип сайта">
+            </a>
         </div>
         <div class="footer__content">
             <div class="footer__item">
@@ -447,14 +715,14 @@
                 <a href="tel:+79088008080" class="footer__item-contact">+7 908 800 80 80</a>
                 <a href="mailto:help@interier.com" class="footer__item-contact">help@interier.com</a>
                 <div class="footer__icons">
-                    <a class="footer__contacts-vk" href="./img/vk.svg">
-                        <img class="footer__contacts-vk-img" src="./img/vk.svg" alt="vk">
+                    <a class="footer__contacts-vk" href="../img/vk.svg">
+                        <img class="footer__contacts-vk-img" src="../img/vk.svg" alt="vk">
                     </a>
-                    <a class="footer__contacts-tg" href="./img/telegram.svg">
-                        <img class="footer__contacts-tg-img" src="./img/telegram.svg" alt="telegram">
+                    <a class="footer__contacts-tg" href="../img/telegram.svg">
+                        <img class="footer__contacts-tg-img" src="../img/telegram.svg" alt="telegram">
                     </a>
-                    <a class="footer__contacts-dzen" href="./img/dzen.svg">
-                        <img class="footer__contacts-dzen-img" src="./img/dzen.svg" alt="dzen">
+                    <a class="footer__contacts-dzen" href="../img/dzen.svg">
+                        <img class="footer__contacts-dzen-img" src="../img/dzen.svg" alt="dzen">
                     </a>
                 </div>
             </div>
